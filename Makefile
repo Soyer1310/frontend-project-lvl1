@@ -1,5 +1,5 @@
-install:
+install: #установить зависимости
 	npm ci
 
-brain-games:
-	node bin/brain-games.js
+brain-games: #запустить brain-games
+	node bin/brain-games.js 
