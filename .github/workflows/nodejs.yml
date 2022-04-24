@@ -1,7 +1,7 @@
-name: say-hello
+name: Node CI
 on: push
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - run: make lint
+      - run: npx eslint .
