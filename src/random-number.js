@@ -1,4 +1,4 @@
-export default (min, max) => {
-  const rand = min - 0.5 + Math.random() * (max - min + 1);
+export default () => {
+  const rand = 1 - 0.5 + Math.random() * (100 - 1 + 1);
   return Math.round(rand);
 };
