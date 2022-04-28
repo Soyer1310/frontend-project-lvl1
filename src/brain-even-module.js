@@ -5,14 +5,14 @@ import askName from './cli.js';
 export default () => {
   const userName = askName();
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
-  const min = 1;
-  const max = 100;
-  let correctAnswer = null;
   for (let i = 0; i < 3; i += 1) {
+    const min = 1;
+    const max = 100;
+    let correctAnswer = 'yes';
     const number = randomNumber(min, max);
     let isEven = true;
     if (number % 2) isEven = false;
-    correctAnswer = (isEven) ? 'yes' : 'no';
+    if (!isEven) correctAnswer = 'no';
     const answer = readlineSync.question(`Question: ${number} `);
     if ((isEven && answer === 'yes') || (!isEven && answer === 'no')) {
       console.log(`Your answer: ${answer}`);
