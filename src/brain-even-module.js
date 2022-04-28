@@ -10,16 +10,14 @@ export default () => {
     const max = 100;
     let correctAnswer = 'yes';
     const number = randomNumber(min, max);
-    let isEven = true;
-    if (number % 2) isEven = false;
-    if (!isEven) correctAnswer = 'no';
-    const answer = readlineSync.question(`Question: ${number} `);
-    if ((isEven && answer === 'yes') || (!isEven && answer === 'no')) {
-      console.log(`Your answer: ${answer}`);
+    if (number % 2) correctAnswer = 'no';
+    const userUnswer = readlineSync.question(`Question: ${number} `);
+    if (userUnswer === correctAnswer) {
+      console.log(`Your answer: ${userUnswer}`);
       console.log('Correct!');
     } else {
-      console.log(`Your answer: ${answer}`);
-      console.log(`'${answer}' is wrong answer. Correct answer was '${correctAnswer}'.`);
+      console.log(`Your answer: ${userUnswer}`);
+      console.log(`'${userUnswer}' is wrong answer. Correct answer was '${correctAnswer}'.`);
       console.log(`Let's try again, ${userName}!`);
       return;
     }
