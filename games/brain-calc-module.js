@@ -14,14 +14,19 @@ export const getAnswer = (question) => {
   const num1 = +questionArr[0];
   const num2 = +questionArr[2];
   const operator = questionArr[1];
+  let answer = null;
   switch (operator) {
     case '+':
-      return num1 + num2;
+      answer = num1 + num2;
+      break;
     case '-':
-      return num1 - num2;
+      answer = num1 - num2;
+      break;
     case '*':
-      return num1 * num2;
+      answer = num1 * num2;
+      break;
     default:
       return null;
   }
+  return String(answer);
 };
