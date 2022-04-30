@@ -9,7 +9,7 @@ export default (task, getQuestion, getAnswer) => {
     const taskQuestion = getQuestion();
     const correctAnswer = getAnswer(taskQuestion);
     const userAnswer = readlineSync.question(`Question: ${taskQuestion} `);
-    if (+userAnswer === correctAnswer) {
+    if (userAnswer === correctAnswer) {
       console.log(`Your answer: ${userAnswer}`);
       console.log('Correct!');
     } else {
