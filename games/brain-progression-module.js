@@ -22,7 +22,7 @@ export const getAnswer = (question) => {
   const hiddenPos = series.indexOf('..');
   let correctAnswer = null;
   if (hiddenPos >= 2) {
-    correctAnswer = series[hiddenPos - 1] + (series[hiddenPos - 1] - series[hiddenPos - 2]);
+    correctAnswer = +series[hiddenPos - 1] + (series[hiddenPos - 1] - series[hiddenPos - 2]);
   } else {
     correctAnswer = series[hiddenPos + 1] - (series[hiddenPos + 2] - series[hiddenPos + 1]);
   }
