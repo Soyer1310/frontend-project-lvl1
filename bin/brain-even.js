@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import evenGame from '../src/brain-even-module.js';
+import index from '../src/index.js';
+import { task, getQuestion, getAnswer } from '../games/brain-even-module.js';
 
-console.log('Welcome to the Brain Games!');
-evenGame();
+index(task, getQuestion, getAnswer);
