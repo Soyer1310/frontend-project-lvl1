@@ -4,3 +4,4 @@
 [![Node CI](https://github.com/Soyer1310/frontend-project-lvl1/actions/workflows/nodejs.yml/badge.svg)](https://github.com/Soyer1310/frontend-project-lvl1/actions/workflows/nodejs.yml)
 <a href="https://asciinema.org/a/22dm0Jt3f8lUB8eA091FgCihM" target="_blank"><img src="https://asciinema.org/a/22dm0Jt3f8lUB8eA091FgCihM.svg" /></a>
 <a href="https://asciinema.org/a/Nn3xX2hUYMGr7wHgEOysBOP3T" target="_blank"><img src="https://asciinema.org/a/Nn3xX2hUYMGr7wHgEOysBOP3T.svg" /></a>
+<a href="https://asciinema.org/a/tJ3T96f3Ok8lqILC9sb13seux" target="_blank"><img src="https://asciinema.org/a/tJ3T96f3Ok8lqILC9sb13seux.svg" /></a>
