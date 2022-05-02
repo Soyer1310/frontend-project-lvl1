@@ -1,6 +1,6 @@
 const randomNumber = (min, max) => {
-  const rand = min - 0.5 + Math.random() * (max - min + 1);
-  return Math.round(rand);
+  const rand = Math.floor(Math.random() * (max - min + 1) + min);
+  return rand;
 };
 
 export default randomNumber;
