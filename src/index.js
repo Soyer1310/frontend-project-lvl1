@@ -1,9 +1,9 @@
 import readlineSync from 'readline-sync';
-import askName from './cli.js';
 
 export default (task, getQuestion, getAnswer) => {
   console.log('Welcome to the Brain Games!');
-  const userName = askName();
+  const userName = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${userName}!`);
   console.log(task);
   for (let i = 0; i < 3; i += 1) {
     const taskQuestion = getQuestion();
