@@ -1,4 +1,4 @@
-import randomNumber from '../src/random-number.js';
+import randomNumber from '../random-number.js';
 
 export const task = 'Answer "yes" if the number is even, otherwise answer "no".';
 
