@@ -1,19 +1,26 @@
-import randomNumber from '../src/random-number.js';
+import randomNumber from '../random-number.js';
+import index from '../index.js';
 
-export const task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-export const getQuestion = () => {
-  const question = randomNumber(1, 101);
-  return question;
-};
-
-export const getAnswer = (question) => {
-  if (question === 1 || question === 0) return 'no';
-  let correctAnswer = 'yes';
+const isPrime = (question) => {
+  if (question === 1 || question === 0) return false;
   for (let i = Math.ceil(question / 2); i > 1; i -= 1) {
     if (question % i === 0) {
-      correctAnswer = 'no';
+      return false;
     }
   }
-  return correctAnswer;
+  return true;
+};
+
+const genPrimeGeme = () => {
+  const round = [];
+  const question = randomNumber(1, 101);
+  const answer = (isPrime(question)) ? 'yes' : 'no';
+  round.push(question, answer);
+  return round;
+};
+
+export default () => {
+  index(genPrimeGeme, task);
 };
