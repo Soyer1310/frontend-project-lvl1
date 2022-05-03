@@ -1,32 +1,37 @@
-import randomNumber from '../src/random-number.js';
+import randomNumber from '../random-number.js';
+import index from '../index.js';
 
-export const task = 'What is the result of the expression?';
+const task = 'What is the result of the expression?';
 
-export const getQuestion = () => {
-  const operators = ['+', '-', '*'];
-  const operator = operators[randomNumber(0, 2)];
-  const question = `${randomNumber(1, 100)} ${operator} ${randomNumber(1, 100)}`;
-  return question;
-};
-
-export const getAnswer = (question) => {
-  const questionArr = question.split(' ');
-  const num1 = +questionArr[0];
-  const num2 = +questionArr[2];
-  const operator = questionArr[1];
-  let answer = null;
+const calc = (num1, num2, operator) => {
+  let result = null;
   switch (operator) {
     case '+':
-      answer = num1 + num2;
+      result = num1 + num2;
       break;
     case '-':
-      answer = num1 - num2;
+      result = num1 - num2;
       break;
     case '*':
-      answer = num1 * num2;
+      result = num1 * num2;
       break;
     default:
       return null;
   }
-  return String(answer);
+  return result;
+};
+
+const genCalcRules = () => {
+  const round = [];
+  const operators = ['+', '-', '*'];
+  const randomOperator = operators[randomNumber(0, operators.length - 1)];
+  const question = `${randomNumber(1, 100)} ${randomOperator} ${randomNumber(1, 100)}`;
+  const [num1, operator, num2] = question.split(' ');
+  const answer = String(calc(num1, num2, operator));
+  round.push(question, answer);
+  return round;
+};
+
+export default () => {
+  index(genCalcRules, task);
 };
