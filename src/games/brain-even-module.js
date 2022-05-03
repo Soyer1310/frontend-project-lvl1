@@ -1,13 +1,23 @@
 import randomNumber from '../random-number.js';
+import index from '../index.js';
 
-export const task = 'Answer "yes" if the number is even, otherwise answer "no".';
+const task = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-export const getQuestion = () => {
-  const question = randomNumber(1, 100);
-  return question;
+const isEven = (question) => {
+  if (question % 2 === 0) {
+    return true;
+  }
+  return false;
 };
 
-export const getAnswer = (question) => {
-  const correctAnswer = (question % 2) ? 'no' : 'yes';
-  return correctAnswer;
+const genEvenRules = () => {
+  const raund = [];
+  const question = randomNumber(1, 100);
+  const answer = (isEven(question)) ? 'yes' : 'no';
+  raund.push(question, answer);
+  return raund;
+};
+
+export default () => {
+  index(genEvenRules, task);
 };
