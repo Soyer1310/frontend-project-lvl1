@@ -7,9 +7,7 @@ export default (game, task) => {
   console.log(task);
   const roundsCount = 3;
   for (let i = 0; i < roundsCount; i += 1) {
-    const round = game();
-    const question = round[0];
-    const answer = round[1];
+    const [question, answer] = game();
     const userAnswer = readlineSync.question(`Question: ${question} `);
     if (userAnswer === answer) {
       console.log(`Your answer: ${userAnswer}`);
