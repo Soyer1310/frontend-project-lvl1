@@ -14,11 +14,9 @@ const isPrime = (question) => {
 };
 
 const genPrimeRound = () => {
-  const round = [];
   const question = genRandNum(1, 101);
   const answer = (isPrime(question)) ? 'yes' : 'no';
-  round.push(question, answer);
-  return round;
+  return [question, answer];
 };
 
 export default () => {
