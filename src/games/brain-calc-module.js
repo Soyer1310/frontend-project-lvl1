@@ -1,4 +1,4 @@
-import randomNumber from '../random-number.js';
+import genRandNum from '../random-number.js';
 import index from '../index.js';
 
 const task = 'What is the result of the expression?';
@@ -24,8 +24,8 @@ const calc = (num1, num2, operator) => {
 const genCalcRules = () => {
   const round = [];
   const operators = ['+', '-', '*'];
-  const randomOperator = operators[randomNumber(0, operators.length - 1)];
-  const question = `${randomNumber(1, 100)} ${randomOperator} ${randomNumber(1, 100)}`;
+  const randomOperator = operators[genRandNum(0, operators.length - 1)];
+  const question = `${genRandNum(1, 100)} ${randomOperator} ${genRandNum(1, 100)}`;
   const [num1, operator, num2] = question.split(' ');
   const answer = String(calc(num1, num2, operator));
   round.push(question, answer);
