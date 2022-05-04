@@ -1,5 +1,5 @@
-import randomNumber from '../random-number.js';
-import index from '../index.js';
+import genRandNum from '../random-number.js';
+import runGame from '../index.js';
 
 const task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
@@ -13,14 +13,14 @@ const isPrime = (question) => {
   return true;
 };
 
-const genPrimeGeme = () => {
+const genPrimeRound = () => {
   const round = [];
-  const question = randomNumber(1, 101);
+  const question = genRandNum(1, 101);
   const answer = (isPrime(question)) ? 'yes' : 'no';
   round.push(question, answer);
   return round;
 };
 
 export default () => {
-  index(genPrimeGeme, task);
+  runGame(genPrimeRound, task);
 };
