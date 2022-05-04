@@ -11,11 +11,9 @@ const isEven = (question) => {
 };
 
 const genEvenRound = () => {
-  const raund = [];
   const question = genRandNum(1, 100);
   const answer = (isEven(question)) ? 'yes' : 'no';
-  raund.push(question, answer);
-  return raund;
+  return [question, answer];
 };
 
 export default () => {
