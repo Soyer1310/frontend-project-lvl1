@@ -7,7 +7,7 @@ const calc = (num1, num2, operator) => {
   let result = null;
   switch (operator) {
     case '+':
-      result = +num1 + +num2;
+      result = num1 + num2;
       break;
     case '-':
       result = num1 - num2;
@@ -24,9 +24,10 @@ const calc = (num1, num2, operator) => {
 const genCalcRound = () => {
   const round = [];
   const operators = ['+', '-', '*'];
-  const randomOperator = operators[genRandNum(0, operators.length - 1)];
-  const question = `${genRandNum(1, 100)} ${randomOperator} ${genRandNum(1, 100)}`;
-  const [num1, operator, num2] = question.split(' ');
+  const operator = operators[genRandNum(0, operators.length - 1)];
+  const num1 = genRandNum(1, 100);
+  const num2 = genRandNum(1, 100);
+  const question = `${num1} ${operator} ${num2}`;
   const answer = String(calc(num1, num2, operator));
   round.push(question, answer);
   return round;
