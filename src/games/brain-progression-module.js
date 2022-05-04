@@ -3,34 +3,26 @@ import runGame from '../index.js';
 
 const task = 'What number is missing in the progression?';
 
-const genProgression = () => {
+const genProgression = (length, step, first, hidden) => {
   const progressionSeries = [];
-  const progressionLength = genRandNum(5, 10);
-  const progressionStep = genRandNum(1, 9);
-  let nextNumber = genRandNum(1, 50);
-  for (let i = 0; i < progressionLength; i += 1) {
+  let nextNumber = first;
+  for (let i = 0; i < length; i += 1) {
     progressionSeries.push(nextNumber);
-    nextNumber += progressionStep;
+    nextNumber += step;
   }
-  const hiddenNum = genRandNum(0, progressionLength - 1);
-  progressionSeries[hiddenNum] = '..';
+  progressionSeries[hidden] = '..';
   const progressionString = progressionSeries.join(' ');
   return progressionString;
 };
 
 export const genProgressRound = () => {
-  const round = [];
-  const question = genProgression();
-  const series = question.split(' ');
-  const hiddenPos = series.indexOf('..');
-  let answer = null;
-  if (hiddenPos >= 2) {
-    answer = +series[hiddenPos - 1] + (series[hiddenPos - 1] - series[hiddenPos - 2]);
-  } else {
-    answer = series[hiddenPos + 1] - (series[hiddenPos + 2] - series[hiddenPos + 1]);
-  }
-  round.push(question, String(answer));
-  return round;
+  const progressionLength = genRandNum(5, 10);
+  const progressionStep = genRandNum(1, 9);
+  const firstNum = genRandNum(1, 50);
+  const hiddenNum = genRandNum(0, progressionLength - 1);
+  const question = genProgression(progressionLength, progressionStep, firstNum, hiddenNum);
+  const answer = String(firstNum + (progressionStep * hiddenNum));
+  return [question, answer];
 };
 
 export default () => {
