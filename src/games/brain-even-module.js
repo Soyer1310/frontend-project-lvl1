@@ -10,7 +10,7 @@ const isEven = (question) => {
   return false;
 };
 
-const genEvenRules = () => {
+const genEvenRound = () => {
   const raund = [];
   const question = genRandNum(1, 100);
   const answer = (isEven(question)) ? 'yes' : 'no';
@@ -19,5 +19,5 @@ const genEvenRules = () => {
 };
 
 export default () => {
-  runGame(genEvenRules, task);
+  runGame(genEvenRound, task);
 };
