@@ -1,24 +1,24 @@
-import randomNumber from '../random-number.js';
-import index from '../index.js';
+import genRandNum from '../random-number.js';
+import runGame from '../index.js';
 
 const task = 'What number is missing in the progression?';
 
 const genProgression = () => {
   const progressionSeries = [];
-  const progressionLength = randomNumber(5, 10);
-  const progressionStep = randomNumber(1, 9);
-  let nextNumber = randomNumber(1, 50);
+  const progressionLength = genRandNum(5, 10);
+  const progressionStep = genRandNum(1, 9);
+  let nextNumber = genRandNum(1, 50);
   for (let i = 0; i < progressionLength; i += 1) {
     progressionSeries.push(nextNumber);
     nextNumber += progressionStep;
   }
-  const hiddenNum = randomNumber(0, progressionLength - 1);
+  const hiddenNum = genRandNum(0, progressionLength - 1);
   progressionSeries[hiddenNum] = '..';
   const progressionString = progressionSeries.join(' ');
   return progressionString;
 };
 
-export const genProgressGame = () => {
+export const genProgressRound = () => {
   const round = [];
   const question = genProgression();
   const series = question.split(' ');
@@ -34,5 +34,5 @@ export const genProgressGame = () => {
 };
 
 export default () => {
-  index(genProgressGame, task);
+  runGame(genProgressRound, task);
 };
