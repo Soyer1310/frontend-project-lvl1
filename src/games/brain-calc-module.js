@@ -1,5 +1,5 @@
 import genRandNum from '../random-number.js';
-import index from '../index.js';
+import runGame from '../index.js';
 
 const task = 'What is the result of the expression?';
 
@@ -21,7 +21,7 @@ const calc = (num1, num2, operator) => {
   return result;
 };
 
-const genCalcRules = () => {
+const genCalcRound = () => {
   const round = [];
   const operators = ['+', '-', '*'];
   const randomOperator = operators[genRandNum(0, operators.length - 1)];
@@ -33,5 +33,5 @@ const genCalcRules = () => {
 };
 
 export default () => {
-  index(genCalcRules, task);
+  runGame(genCalcRound, task);
 };
