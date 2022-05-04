@@ -19,9 +19,9 @@ export const genProgressRound = () => {
   const progressionLength = genRandNum(5, 10);
   const progressionStep = genRandNum(1, 9);
   const firstNum = genRandNum(1, 50);
-  const hiddenNum = genRandNum(0, progressionLength - 1);
-  const question = genProgression(progressionLength, progressionStep, firstNum, hiddenNum);
-  const answer = String(firstNum + (progressionStep * hiddenNum));
+  const hiddenPos = genRandNum(0, progressionLength - 1);
+  const question = genProgression(progressionLength, progressionStep, firstNum, hiddenPos);
+  const answer = String(firstNum + (progressionStep * hiddenPos));
   return [question, answer];
 };
 
